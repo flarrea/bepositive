@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-avatar slot="end" (click)="presentModal()">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020v2.appspot.com/o/imagenes%2Ffaces_neutral.png?alt=media&token=5afa0575-f2e8-4c60-b199-ff2e3d5b0784"
+      />
+    </ion-avatar>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        ¿Cómo te sientes hoy?
+      </h4>
+      <h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Click en la imagen para contestar:
+      </h6>
+    </ion-card-content>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+  <ion-searchbar (ionChange)="search($event)"
+  placeholder="Buscar"
+  clearIcon>
+</ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let consejo of consejos"
+    [routerLink]="['/tabs/', 'detalle', consejo.ID]" RouterDirection="forward">
+    <ion-thumbnail slot="start">
+      <img src="{{consejo.Imagen}}">
+    </ion-thumbnail>
+    <ion-label>
+      <h2 class="ion-text-wrap">{{consejo.Nombre}}</h2>
+      <p>{{consejo.Categoria}}</p>
+    </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

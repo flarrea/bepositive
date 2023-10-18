@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()"><h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Cerrar
+      </h6></ion-button>
+    </ion-buttons>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        Pregunta
+      </h4>
+      <h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Solicita una llamada de consulta.
+      </h6>
+    </ion-card-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+
+    <!-- Tour info group -->
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Consejos</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="{{consejo.Imagen}}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2 text-wrap>{{consejo.Nombre}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+
+    <!-- Schedule group -->
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Agenda un posible contacto.</ion-label>
+      </ion-item-divider>
+
+      <!-- Date -->
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-datetime [(ngModel)]="request.Date" min="{{day_after_tomorrow}}" max="{{two_years_later}}"
+          display-format="DDD, MMMM DD YYYY" picker-format="MMMM DD YYYY"
+          placeholder="Seleccione una fecha!">
+        </ion-datetime>
+      </ion-item>
+
+      <!-- Time -->
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-datetime [(ngModel)]="request.Time" hourValues="9,10,11,12,13,14,15,16,17" minuteValues="0,15,30,45"
+          display-format="hh:mm A" picker-format="h mm" placeholder="Seleccione una hora!">
+        </ion-datetime>
+      </ion-item>
+
+    </ion-item-group>
+
+    <!-- Contact information group -->
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Información de Contacto</ion-label>
+      </ion-item-divider>
+
+      <!-- First name -->
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="request.FirstName">
+        </ion-input>
+      </ion-item>
+
+      <!-- Last name -->
+      <ion-item>
+        <ion-label>Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="request.LastName">
+        </ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="request.Email">
+        </ion-input>
+      </ion-item>
+
+    </ion-item-group>
+
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <ion-button expand="block" (click)="cancel()">Volver a Detalles</ion-button>
+  <ion-button expand="block" (click)="send()">Enviar Solicitud</ion-button>
+</ion-footer>
+

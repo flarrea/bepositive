@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-avatar slot="end">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020.appspot.com/o/imagenes%2Fimgsocial.png?alt=media&token=70bd5960-b560-415b-a90b-7cc1383d71ab"
+      />
+    </ion-avatar>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        Perfil
+      </h4>
+      <h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Algunas ideas importantes.
+      </h6>
+    </ion-card-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar (click)="selectImageSource()" class="profile-pic">
+    <ion-img [src]="myProfileImage"></ion-img>
+  </ion-avatar>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Perfil BePositive</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Ejemplo del perfil de un usuario
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Información Personal</ion-label>
+    </ion-item-divider>
+  </ion-list>
+  <ion-item (click)="updateName()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Nombre </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.fullName">
+            {{userProfile?.fullName}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.fullName">
+            <span> Toque aquí para editar. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updateEmail()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Email </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+            <span> Toque aquí para editar. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item (click)="updatePassword()">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Password </ion-col>
+          <ion-col class="text-center" size="7" class="placeholder-profile">
+            <span> Toque aquí para editar. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+  
+</ion-content>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "491635113960",
+    "firebase_url": "https://sophi-optimism-2020.firebaseio.com",
+    "project_id": "sophi-optimism-2020",
+    "storage_bucket": "sophi-optimism-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491635113960:android:38dae41567b4c648d52e5d",
+        "android_client_info": {
+          "package_name": "com.tecnofran.bepositive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491635113960-d55bnsum09pj6ragldf3r56mtbdnf8r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRPZIZmrqCMam0ptIRw7yRtGRwl6A_X1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491635113960-d55bnsum09pj6ragldf3r56mtbdnf8r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

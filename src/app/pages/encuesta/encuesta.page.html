@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()"><h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Cerrar
+      </h6></ion-button>
+    </ion-buttons>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        Ecuesta
+      </h4>
+    </ion-card-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  <form>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Selecciona una carita</ion-label>
+      </ion-item-divider>
+      <ion-list>
+        <ion-radio-group value="biff">
+          <ion-item>
+            <ion-label>Optimista</ion-label>
+            <ion-radio slot="start" value="biff"></ion-radio>
+            <ion-avatar>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020v2.appspot.com/o/imagenes%2Ffaces_positive.png?alt=media&token=0443fb69-712b-4aec-bd8b-d5f1d8369df5"
+              />
+            </ion-avatar>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Indeciso</ion-label>
+            <ion-radio slot="start" value="griff"></ion-radio>
+            <ion-avatar>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020v2.appspot.com/o/imagenes%2Ffaces_neutral.png?alt=media&token=5afa0575-f2e8-4c60-b199-ff2e3d5b0784"
+              />
+            </ion-avatar>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Pesimista</ion-label>
+            <ion-radio slot="start" value="buford"></ion-radio>
+            <ion-avatar>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020v2.appspot.com/o/imagenes%2Ffaces_negative.png?alt=media&token=f20b5d55-d90d-41d1-9311-6a8e04154f51"
+              />
+            </ion-avatar>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Algunas preguntas</ion-label>
+      </ion-item-divider>
+    <ion-item>
+      <ion-label stacked>1.</ion-label>
+      <ion-input type="text" placeholder="¿Cómo te sientes hoy?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>2.</ion-label>
+      <ion-input type="text" placeholder="¿Hay algún pensamiento positivo?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>3.</ion-label>
+      <ion-input type="text" placeholder="¿Cuál?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>4.</ion-label>
+      <ion-textarea type="text" placeholder="¿Qué pensamiento positivo eligirias para hoy?">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" (click)="send()">Enviar</ion-button>
+  </ion-item-group>
+  </form>
+</ion-list>
+</ion-content>
+

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-avatar slot="end">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020.appspot.com/o/imagenes%2Fimgsocial.png?alt=media&token=70bd5960-b560-415b-a90b-7cc1383d71ab"
+      />
+    </ion-avatar>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        Conceptos
+      </h4>
+      <h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Algunas ideas importantes.
+      </h6>
+    </ion-card-content>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+  <ion-searchbar (ionChange)="search($event)"
+  placeholder="Buscar"
+  clearIcon>
+</ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let concepto of conceptos">
+    <ion-card>
+      <ion-label>
+        <h2 class="ion-text-wrap">{{concepto.Nombre}}</h2>
+      </ion-label>
+      <ion-img
+        src="{{concepto.Imagen}}"
+      ></ion-img>
+      <ion-card-content>
+        {{concepto.Texto}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+  </ion-list>
+</ion-content>
+

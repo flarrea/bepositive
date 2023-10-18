@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/consejos"></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="end">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/sophi-optimism-2020.appspot.com/o/imagenes%2Fimgsocial.png?alt=media&token=70bd5960-b560-415b-a90b-7cc1383d71ab"
+      />
+    </ion-avatar>
+    <ion-card-content>
+      <h4
+        style="
+          font-weight: 600;
+          color: rgba(39, 39, 39, 0.81);
+          font-size: 16px;
+        "
+      >
+        Detalles
+      </h4>
+      <h6 style="font-weight: 600; color: rgb(133, 133, 133); font-size: 14px;">
+        Precisemos más.
+      </h6>
+    </ion-card-content>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{consejo.Nombre}} / {{consejo.Nombre}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        {{consejo.Nombre}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="{{consejo.Imagen}}"></ion-img>
+      <hr />
+      {{consejo.Texto}}
+      <hr />
+    </ion-card-content>
+  </ion-card>
+
+    <!-- A (FAB) share button -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed" (click)="toggleSocial()">
+      <ion-fab-button>
+        <ion-icon name="share-social"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="botton">
+        <ion-fab-button (click)="openSocial('facebook')">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('instagram')">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('twitter')">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openSocial('whatsapp')">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+</ion-content>
+
+
+<ion-footer class="ion-padding" style="height: 80px;">
+  <ion-button (click)="presentActionSheet()" *ngIf="!showSocial">
+    Options
+  </ion-button>
+</ion-footer>
+
